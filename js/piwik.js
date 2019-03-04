@@ -5223,6 +5223,7 @@ if (typeof window.Piwik !== 'object') {
                 }
 
                 if (isPreRendered) {
+                    console.log('event listener');
                     // note: the event name doesn't follow the same naming convention as vendor properties
                     addEventListener(documentAlias, prefix + 'visibilitychange', function ready() {
                         documentAlias.removeEventListener(prefix + 'visibilitychange', ready, false);
@@ -5231,7 +5232,7 @@ if (typeof window.Piwik !== 'object') {
 
                     return;
                 }
-
+console.log('calling callback');
                 // configCountPreRendered === true || isPreRendered === false
                 callback();
             }
